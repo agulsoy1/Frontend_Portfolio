@@ -13,7 +13,7 @@ export default function Home() {
     <div className={`flex flex-col items-center min-h-screen w-full `}>
       {openContactModal && <ContactModal />}
       <div
-        className={`w-full ${darkMode ? "text-white bg-gradient-to-l from-slate-950 via-slate-900 to-slate-800" : "text-black bg-gradient-to-r from-[#9a7c63] to-[#f1e4d2]"}`}
+        className={`w-full ${darkMode ? "text-white bg-linear-to-l from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-r from-[#9a7c63] to-[#f1e4d2]"}`}
       >
         <nav className="fixed z-50 flex items-center justify-between w-full p-5">
           <div>
