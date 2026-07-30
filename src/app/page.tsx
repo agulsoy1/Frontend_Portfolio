@@ -135,7 +135,7 @@ export default function Home() {
             />
           </figure>
           <div className={`absolute right-[26.4%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-110 h-125 opacity-60 button-bounce delay-1750`}></div>
-          <div className={`absolute right-[21.7%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-120 h-135 opacity-60 button-bounce delay-2000`}></div>
+          <div className={`absolute right-[25.7%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-120 h-135 opacity-60 button-bounce delay-2000`}></div>
         </section>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
