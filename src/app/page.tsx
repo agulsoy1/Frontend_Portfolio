@@ -69,7 +69,7 @@ export default function Home() {
           className={`relative w-full flex-1 flex items-center justify-center min-h-screen gap-15 overflow-hidden`}
         >
           <div
-            className={`w-225 flex flex-col items-start justify-evenly gap-4 text-left p-5 rounded-lg`}
+            className={`w-175 flex flex-col items-start justify-evenly gap-4 text-left p-5 rounded-lg`}
           >
             <div className="flex flex-col gap-4 z-100">
               <h1 className="text-[50px] font-bold fade-in delay-0">
@@ -134,7 +134,7 @@ export default function Home() {
               className="absolute inset-0 w-full h-full"
             />
           </figure>
-          <div className={`absolute right-[22.45%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-110 h-125 opacity-60 button-bounce delay-1750`}></div>
+          <div className={`absolute right-[26.4%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-110 h-125 opacity-60 button-bounce delay-1750`}></div>
           <div className={`absolute right-[21.7%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-120 h-135 opacity-60 button-bounce delay-2000`}></div>
         </section>
       </div>
