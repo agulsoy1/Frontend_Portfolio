@@ -13,7 +13,7 @@ export default function Home() {
     <div className={`flex flex-col items-center min-h-screen w-full `}>
       {openContactModal && <ContactModal />}
       <div
-        className={`w-full ${darkMode ? "text-white bg-linear-to-l from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-r from-[#9a7c63] to-[#f1e4d2]"}`}
+        className={`w-full ${darkMode ? "text-white bg-linear-to-l from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-r from-[#826955] to-[#f1e4d2]"}`}
       >
         <nav className="fixed z-50 flex items-center justify-between w-full p-5">
           <div>
@@ -66,21 +66,26 @@ export default function Home() {
           </ul>
         </nav>
         <section
-          className={`w-full flex-1 flex items-center justify-center min-h-screen gap-15`}
+          className={`relative w-full flex-1 flex items-center justify-center min-h-screen gap-15 overflow-hidden`}
         >
           <div
-            className={`w-100 flex flex-col items-start text-left gap-4 p-5 rounded-lg fade-in delay-500`}
+            className={`w-225 flex flex-col items-start justify-evenly gap-4 text-left p-5 rounded-lg`}
           >
-            <h1 className="text-4xl font-bold">Hi, my name is Alex</h1>
-            <p className="text-lg w-100">
-              I am a software developer driven by curiosity and a passion for
-              creative problem-solving. I build responsive, intuitive web
-              applications that create meaningful, user-centered experiences.
-            </p>
+            <div className="flex flex-col gap-4 z-100">
+              <h1 className="text-[50px] font-bold fade-in delay-0">
+                Hi, my name is Alex
+              </h1>
+              <p className="text-[22px] w-160 fade-in delay-250">
+                I am a software developer driven by curiosity and a passion for
+                creative problem-solving. I build responsive, intuitive web
+                applications that create meaningful, user-centered experiences.
+              </p>
+            </div>
             <div className="flex gap-4">
               <Link
-                href="/contact"
-                className="bg-blue-500 text-white px-2 py-2 rounded-[50%]"
+                href="https://www.linkedin.com/in/alexandre-turgut-gulsoy-1063b62c"
+                className="bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce delay-750"
+                target="_blank"
               >
                 <Image
                   src="/assets/linkedin-in-brands-solid-full (1).svg"
@@ -91,8 +96,9 @@ export default function Home() {
                 />
               </Link>
               <Link
-                href="/contact"
-                className="bg-blue-500 text-white px-2 py-2 rounded-[50%]"
+                href="https://github.com/agulsoy1"
+                className="bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce delay-1000"
+                target="_blank"
               >
                 <Image
                   src="/assets/github-brands-solid-full.svg"
@@ -102,9 +108,10 @@ export default function Home() {
                   className="invert"
                 />
               </Link>
-              <Link
-                href="/contact"
-                className="bg-blue-500 text-white px-2 py-2 rounded-[50%]"
+              <a
+                href="/Alex_FES_Resume.pdf"
+                download
+                className="bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce delay-1250"
               >
                 <Image
                   src="/assets/file-pdf-regular-full.svg"
@@ -113,18 +120,22 @@ export default function Home() {
                   height={20}
                   className="invert"
                 />
-              </Link>
+              </a>
             </div>
           </div>
-          <figure className="relative">
+          <figure
+            className={`relative fade-in delay-1500 w-100 h-115 rounded-[50%] border-4 ${darkMode ? "border-white" : "border-black"} overflow-hidden`}
+          >
             <Image
-              src="/assets/profile_pic.png"
+              src="/profile_img_wbg.jpg"
               alt="Profile Picture"
-              width={500}
-              height={600}
+              width={200}
+              height={200}
               className="absolute inset-0 w-full h-full"
             />
           </figure>
+          <div className={`absolute right-[22.45%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-110 h-125 opacity-60 button-bounce delay-1750`}></div>
+          <div className={`absolute right-[21.7%] top-1/2 -translate-y-1/2 ${darkMode ? "border-white" : "border-black"} border-dotted border-5 rounded-[50%] w-120 h-135 opacity-60 button-bounce delay-2000`}></div>
         </section>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

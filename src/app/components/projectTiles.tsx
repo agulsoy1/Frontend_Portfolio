@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type ProjectTilesType = {
   projectImage: string;
@@ -20,12 +21,12 @@ export default function ProjectTiles({projectImage, projectTitle, projectDesc}: 
         <h2 className="group-hover:visible invisible">{projectTitle}</h2>
         <h3 className="group-hover:visible invisible">{projectDesc}</h3>
         <div className="group-hover:visible invisible flex gap-5">
-          <button className="bg-blue-500 text-white px-2 py-2 rounded-[50px]">
+          <Link href="#" className="bg-blue-500 text-white px-2 py-2 rounded-[50px]">
             Github
-          </button>
-          <button className="bg-blue-500 text-white px-2 py-2 rounded-[50px]">
+          </Link>
+          <Link href="#" className="bg-blue-500 text-white px-2 py-2 rounded-[50px]">
             Live Demo
-          </button>
+          </Link>
         </div>
       </div>
     </div>

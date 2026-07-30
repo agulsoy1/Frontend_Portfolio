@@ -27,14 +27,35 @@ body {
 @keyframes fade-in {
   0% {
     opacity: 0;
+    transform: translateY(-30px);
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .fade-in {
-  animation: fade-in 2s ease-in-out;
+  animation: fade-in 1s ease-in-out backwards;
+}
+
+@keyframes button-bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.button-bounce {
+  animation: button-bounce 1s ease-in-out backwards;
 }
 
 @keyframes fade-in-right {
@@ -49,7 +70,7 @@ body {
 }
 
 .fade-in-right {
-  animation: fade-in-right .5s ease-in-out;
+  animation: fade-in-right .5s ease-in-out both;
 }
 
 @keyframes fade-in-left {
@@ -64,5 +85,53 @@ body {
 }
 
 .fade-in-left {
-  animation: fade-in-left .5s ease-in-out;
+  animation: fade-in-left .5s ease-in-out both;
 }
+
+@keyframes shift-down {
+  0% {
+    opacity:0;
+    transform: translateY(-500px);
+  }
+  100% {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+.shift-down {
+  animation: shift-down 3s ease-in-out both;
+}
+
+/* Delays */
+.delay-0 {
+  animation-delay: 0ms;
+}
+.delay-250 {
+  animation-delay: 250ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-750 {
+  animation-delay: 750ms;
+}
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+.delay-1250 {
+  animation-delay: 1250ms;
+}
+.delay-1500 {
+  animation-delay: 1500ms;
+}
+.delay-1750 {
+  animation-delay: 1750ms;
+}
+.delay-2000 {
+  animation-delay: 2000ms;
+}
+.delay-2250 {
+  animation-delay: 2250ms;
+}
+
+
