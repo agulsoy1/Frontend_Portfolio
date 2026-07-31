@@ -16,7 +16,7 @@ export default function TechStack({
   const [showName, setShowName] = useState(false);
   return (
     <li className="flex flex-col items-center gap-1" onMouseEnter={() => setShowName(true)} onMouseLeave={() => setShowName(false)}>
-      <Image src={techIcon} alt={techAlt} width={50} height={50} />
+      <Image src={techIcon} alt={techAlt} width={75} height={75} />
       <span className={`${showName ? "opacity-100 translate-y-0 transition duration-300 ease-in-out" : "opacity-0 translate-y-2 transition duration-300 ease-in-out"}`}>{techName}</span>
     </li>
   );
