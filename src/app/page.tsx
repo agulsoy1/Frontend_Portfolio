@@ -257,8 +257,6 @@ export default function Home() {
                 "OpenAI Vision API",
                 "Vercel",
               ]}
-
-              // "TypeScript", "Tailwind CSS", "OpenAI Vision API", "Vercel"]}
             />
             <ProjectTiles
               projectImage="/assets/ultraverse_img.png"
@@ -273,7 +271,7 @@ export default function Home() {
                 "/assets/icons/white_openai_icon.png",
                 "/assets/icons/vercel_icon.png",
               ]}
-              toolsUsed={["React", "Firebase", "Axios", "REST APIs", "Vercel"]}
+              toolsUsed={["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "Vercel"]}
             />
             <ProjectTiles
               projectImage="/assets/movie_db_img.png"
