@@ -244,11 +244,11 @@ export default function Home() {
               liveLink="https://skinstric-ai-internship-xi.vercel.app/"
               codeLink="https://github.com/agulsoy1/Skinstric_AI_Internship.git"
               iconsUsed={[
-                "/assets/icons/nextjs_icon.png",
-                "/assets/icons/typescript_icon.png",
-                "/assets/icons/tailwindCSS_icon.png",
-                "/assets/icons/white_openai_icon.png",
-                "/assets/icons/vercel_icon.png",
+                "/assets/nextjs_icon.png",
+                "/assets/typescript_icon.png",
+                "/assets/tailwindCSS_icon.png",
+                "/assets/white_openai_icon.png",
+                "/assets/vercel_icon.png",
               ]}
               toolsUsed={[
                 "Next.js",
@@ -265,11 +265,11 @@ export default function Home() {
               liveLink="https://alex-internship-uih7.vercel.app/"
               codeLink="https://github.com/agulsoy1/alex-internship.git"
               iconsUsed={[
-                "/assets/icons/nextjs_icon.png",
-                "/assets/icons/typescript_icon.png",
-                "/assets/icons/tailwindCSS_icon.png",
-                "/assets/icons/white_openai_icon.png",
-                "/assets/icons/vercel_icon.png",
+                "/assets/nextjs_icon.png",
+                "/assets/typescript_icon.png",
+                "/assets/tailwindCSS_icon.png",
+                "/assets/white_openai_icon.png",
+                "/assets/vercel_icon.png",
               ]}
               toolsUsed={["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "Vercel"]}
             />
@@ -280,10 +280,10 @@ export default function Home() {
               liveLink="https://interactive-movie-database.vercel.app/login"
               codeLink="https://github.com/agulsoy1/Interactive__Movie__Database.git"
               iconsUsed={[
-                "/assets/icons/react_icon.png",
-                "/assets/icons/omdbAPI_icon.png",
-                "/assets/icons/axios_icon.png",
-                "/assets/icons/vercel_icon.png",
+                "/assets/react_icon.png",
+                "/assets/omdbAPI_icon.png",
+                "/assets/axios_icon.png",
+                "/assets/vercel_icon.png",
               ]}
               toolsUsed={["React", "OMDB API", "Axios", "Vercel"]}
             />
@@ -294,11 +294,11 @@ export default function Home() {
               liveLink="https://music-streaming-website-omega.vercel.app/"
               codeLink="https://github.com/agulsoy1/music-streaming-website.git"
               iconsUsed={[
-                "/assets/icons/nextjs_icon.png",
-                "/assets/icons/typescript_icon.png",
-                "/assets/icons/supabase_icon.png",
-                "/assets/icons/stripe_icon.png",
-                "/assets/icons/vercel_icon.png",
+                "/assets/nextjs_icon.png",
+                "/assets/typescript_icon.png",
+                "/assets/supabase_icon.png",
+                "/assets/stripe_icon.png",
+                "/assets/vercel_icon.png",
               ]}
               toolsUsed={[
                 "Next.js",
@@ -315,11 +315,11 @@ export default function Home() {
               liveLink="https://summarist-app-ten.vercel.app/"
               codeLink="https://github.com/agulsoy1/Summarist-App.git"
               iconsUsed={[
-                "/assets/icons/nextjs_icon.png",
-                "/assets/icons/typescript_icon.png",
-                "/assets/icons/firebase_icon.png",
-                "/assets/icons/tailwindCSS_icon.png",
-                "/assets/icons/vercel_icon.png",
+                "/assets/nextjs_icon.png",
+                "/assets/typescript_icon.png",
+                "/assets/firebase_icon.png",
+                "/assets/tailwindCSS_icon.png",
+                "/assets/vercel_icon.png",
               ]}
               toolsUsed={[
                 "Next.js",
@@ -336,10 +336,10 @@ export default function Home() {
               liveLink="https://react-library-tutorial.vercel.app/"
               codeLink="https://github.com/agulsoy1/React__Library__Tutorial.git"
               iconsUsed={[
-                "/assets/icons/react_icon.png",
-                "/assets/icons/firebase_icon.png",
-                "/assets/icons/tailwindCSS_icon.png",
-                "/assets/icons/vercel_icon.png",
+                "/assets/react_icon.png",
+                "/assets/firebase_icon.png",
+                "/assets/tailwindCSS_icon.png",
+                "/assets/vercel_icon.png",
               ]}
               toolsUsed={["React", "Firebase", "Tailwind CSS", "Vercel"]}
             />
