@@ -41,83 +41,80 @@ export default function Home() {
               className="brightness-200"
             />
           </div>
-          {
-            <button
-              className="md:hidden"
-              onClick={() => setMenuOpen(!menuOpen)}
+          <div className="flex items-center gap-5">
+            {
+              <button
+                className="md:hidden order-2"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <Image
+                  src="/assets/icons/bars-solid-full.svg"
+                  alt="Menu"
+                  width={25}
+                  height={25}
+                  className={`${darkMode ? "invert" : ""}`}
+                />
+              </button>
+            }
+            <ul
+              className={`hidden md:flex gap-7 justify-center items-center text-lg`}
             >
-              <Image
-                src="/assets/icons/bars-solid-full.svg"
-                alt="Menu"
-                width={25}
-                height={25}
-                className={`${menuOpen ? "invert" : ""}`}
-              />
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="#projects">Projects</Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    if (openContactModal) {
+                      closeModal();
+                    } else {
+                      setOpenContactModal(true);
+                    }
+                  }}
+                  className="relative"
+                >
+                  Contact
+                </button>
+              </li>
+            </ul>
+            <button onClick={() => setDarkMode(!darkMode)} className="relative">
+              {darkMode ? (
+                <Image
+                  src="/assets/sun-solid-full.svg"
+                  alt="Light Mode"
+                  width={20}
+                  height={20}
+                  className="invert"
+                />
+              ) : (
+                <Image
+                  src="/assets/moon-solid-full.svg"
+                  alt="Dark Mode"
+                  width={25}
+                  height={25}
+                />
+              )}
             </button>
-          }
-          <ul
-            className={`hidden md:flex gap-7 justify-center items-center text-lg`}
-          >
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="#projects">Projects</Link>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  if (openContactModal) {
-                    closeModal();
-                  } else {
-                    setOpenContactModal(true);
-                  }
-                }}
-                className="relative"
-              >
-                Contact
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="relative"
-              >
-                {darkMode ? (
-                  <Image
-                    src="/assets/sun-solid-full.svg"
-                    alt="Light Mode"
-                    width={20}
-                    height={20}
-                    className="invert"
-                  />
-                ) : (
-                  <Image
-                    src="/assets/moon-solid-full.svg"
-                    alt="Dark Mode"
-                    width={25}
-                    height={25}
-                  />
-                )}
-              </button>
-            </li>
-          </ul>
+          </div>
         </nav>
         {menuOpen && (
           <>
-            <ul className="absolute z-101 overflow-hidden flex flex-col justify-center items-center gap-30 font-bold text-3xl w-full h-full bg-black text-white md:hidden">
-            <button
-              className="absolute top-5 right-5 md:hidden"
-              onClick={() => setMenuOpen(false)}
-            >
-              <Image
-                src="/assets/icons/xmark-solid-full.svg"
-                alt="Menu"
-                width={30}
-                height={30}
-                className="invert"
-              />
-            </button>
+            <ul className="absolute z-101 overflow-hidden flex flex-col justify-center items-center gap-30 text-3xl w-full h-full bg-black text-white md:hidden">
+              <button
+                className="absolute top-5 right-5 md:hidden"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Image
+                  src="/assets/icons/xmark-solid-full.svg"
+                  alt="Menu"
+                  width={30}
+                  height={30}
+                  className="invert"
+                />
+              </button>
               <li>
                 <Link href="/" onClick={() => setMenuOpen(false)}>
                   Home
@@ -271,7 +268,13 @@ export default function Home() {
                 "/assets/white_openai_icon.png",
                 "/assets/vercel_icon.png",
               ]}
-              toolsUsed={["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "Vercel"]}
+              toolsUsed={[
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "REST APIs",
+                "Vercel",
+              ]}
             />
             <ProjectTiles
               projectImage="/assets/movie_db_img.png"

@@ -21,7 +21,7 @@ export default function ProjectTiles({
   toolsUsed,
 }: ProjectTilesType) {
   return (
-    <div className="group relative bg-white rounded-[20px] w-full max-w-250 max-h-150 overflow-hidden">
+    <div className="group relative shadow-lg bg-white rounded-[20px] w-full max-w-250 max-h-150 overflow-hidden">
       <Image
         src={projectImage}
         alt="Project Image"
@@ -40,9 +40,9 @@ export default function ProjectTiles({
         </div>
         <div className="group-hover:visible invisible flex gap-5">
           {toolsUsed.map((tool, index) => (
-            <div key={index} className="flex flex-col gap-2 items-center">
+            <div key={index} className="flex flex-col gap-2 items-center justify-center">
               <Image src={iconsUsed[index]} alt={tool} width={40} height={40} />
-              <p className="text-[clamp(10px,2vw,15px)]">{tool}</p>
+              <p className="text-[15px]">{tool}</p>
             </div>
           ))}
         </div>
