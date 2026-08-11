@@ -18,7 +18,7 @@ export default function Background_Anim() {
       {particles.map(({ id, size, delay, x, y }) => (
         <div
           key={id}
-          className="absolute opacity-25 m-5 bg-white rounded-[10px] fade-in pulse-in-out"
+          className="absolute opacity-25 m-5 bg-white rounded-[5px] fade-in pulse-in-out"
           style={{
             width: size,
             height: size,
