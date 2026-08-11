@@ -213,7 +213,7 @@ export default function Home() {
                 ${darkMode ? "border-white" : "border-black"} overflow-hidden`}
             >
               <Image
-                src="/profile_img_wbg.jpg"
+                src="/assets/profile_img_wbg.jpg"
                 alt="Profile Picture"
                 width={100}
                 height={100}
