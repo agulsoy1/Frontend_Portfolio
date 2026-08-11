@@ -246,7 +246,7 @@ export default function Home() {
               iconsUsed={[
                 "/assets/icons/nextjs_icon.png",
                 "/assets/icons/typescript_icon.png",
-                "/assets/icons/tailwindcss_icon.png",
+                "/assets/icons/tailwindCSS_icon.png",
                 "/assets/icons/white_openai_icon.png",
                 "/assets/icons/vercel_icon.png",
               ]}
@@ -269,7 +269,7 @@ export default function Home() {
               iconsUsed={[
                 "/assets/icons/nextjs_icon.png",
                 "/assets/icons/typescript_icon.png",
-                "/assets/icons/tailwindcss_icon.png",
+                "/assets/icons/tailwindCSS_icon.png",
                 "/assets/icons/white_openai_icon.png",
                 "/assets/icons/vercel_icon.png",
               ]}
@@ -320,7 +320,7 @@ export default function Home() {
                 "/assets/icons/nextjs_icon.png",
                 "/assets/icons/typescript_icon.png",
                 "/assets/icons/firebase_icon.png",
-                "/assets/icons/tailwindcss_icon.png",
+                "/assets/icons/tailwindCSS_icon.png",
                 "/assets/icons/vercel_icon.png",
               ]}
               toolsUsed={[
@@ -340,7 +340,7 @@ export default function Home() {
               iconsUsed={[
                 "/assets/icons/react_icon.png",
                 "/assets/icons/firebase_icon.png",
-                "/assets/icons/tailwindcss_icon.png",
+                "/assets/icons/tailwindCSS_icon.png",
                 "/assets/icons/vercel_icon.png",
               ]}
               toolsUsed={["React", "Firebase", "Tailwind CSS", "Vercel"]}
