@@ -1,148 +1,46 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactModal from "./components/contactModal";
 import ProjectTiles from "./components/projectTiles";
 import Background_Anim from "./components/Background_Anim";
+import Nav from "./components/Nav";
+import { useContactModal } from "./context/ContactModalContext";
 
 export default function Home() {
-  const [openContactModal, setOpenContactModal] = useState(false);
+  const { openContactModal, isClosing, closeModal } =
+    useContactModal();
   const [darkMode, setDarkMode] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function closeModal() {
-    setIsClosing(true);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
 
-    setTimeout(() => {
-      setOpenContactModal(false);
-      setIsClosing(false);
-    }, 500);
-  }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
 
   return (
-    <div className={`flex flex-col items-center min-h-screen w-full `}>
+    <div
+      className={`flex flex-col items-center min-h-screen w-full ${
+        openContactModal ? "blur-sm" : ""
+      }`}
+    >
       {openContactModal && (
         <ContactModal isClosing={isClosing} closeModal={closeModal} />
       )}
       <div
         className={`w-full ${darkMode ? "text-white bg-linear-to-bl from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-tr from-[#826955] to-[#f1e4d2]"}`}
       >
-        <nav
-          className={`fixed z-50 flex items-center justify-between w-full p-5`}
-        >
-          <div>
-            <Image
-              src="/assets/logo_edited.png"
-              alt="Logo"
-              width={50}
-              height={50}
-              className="brightness-200"
-            />
-          </div>
-          <div className="flex items-center gap-5">
-            {
-              <button
-                className="md:hidden order-2"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                <Image
-                  src="/assets/icons/bars-solid-full.svg"
-                  alt="Menu"
-                  width={25}
-                  height={25}
-                  className={`${darkMode ? "invert" : ""}`}
-                />
-              </button>
-            }
-            <ul
-              className={`hidden md:flex gap-7 justify-center items-center text-lg`}
-            >
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="#projects">Projects</Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    if (openContactModal) {
-                      closeModal();
-                    } else {
-                      setOpenContactModal(true);
-                    }
-                  }}
-                  className="relative"
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-            <button onClick={() => setDarkMode(!darkMode)} className="relative">
-              {darkMode ? (
-                <Image
-                  src="/assets/sun-solid-full.svg"
-                  alt="Light Mode"
-                  width={20}
-                  height={20}
-                  className="invert"
-                />
-              ) : (
-                <Image
-                  src="/assets/moon-solid-full.svg"
-                  alt="Dark Mode"
-                  width={25}
-                  height={25}
-                />
-              )}
-            </button>
-          </div>
-        </nav>
-        {menuOpen && (
-          <>
-            <ul className="absolute z-101 overflow-hidden flex flex-col justify-center items-center gap-30 text-3xl w-full h-full bg-black text-white md:hidden">
-              <button
-                className="absolute top-5 right-5 md:hidden"
-                onClick={() => setMenuOpen(false)}
-              >
-                <Image
-                  src="/assets/icons/xmark-solid-full.svg"
-                  alt="Menu"
-                  width={30}
-                  height={30}
-                  className="invert"
-                />
-              </button>
-              <li>
-                <Link href="/" onClick={() => setMenuOpen(false)}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#projects" onClick={() => setMenuOpen(false)}>
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    if (openContactModal) {
-                      closeModal();
-                    } else {
-                      setOpenContactModal(true);
-                      setMenuOpen(false);
-                    }
-                  }}
-                  className="relative"
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </>
-        )}
+        <Nav
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+
         <section
           className={`relative w-full flex-1 flex xl:flex-row flex-col items-center justify-center min-h-screen gap-5 overflow-hidden`}
         >
@@ -350,7 +248,7 @@ export default function Home() {
         </div>
       </section>
       <footer
-        className={`w-full p-5 text-center ${darkMode ? "bg-[#D1CCDC] text-black" : "bg-[#0a0a0a] text-white"}`}
+        className={`relative bottom-0 w-full p-5 text-center ${darkMode ? "text-white" : "text-black"}`}
       >
         <p>&copy; 2026 Alexandre Turgut Gulsoy. All rights reserved.</p>
       </footer>
