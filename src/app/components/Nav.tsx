@@ -39,7 +39,7 @@ export default function Nav({
               onClick={() => setMenuOpen(!menuOpen)}
             >
               <Image
-                src="/assets/icons/bars-solid-full.svg"
+                src="/assets/bars-solid-full.svg"
                 alt="Menu"
                 width={25}
                 height={25}
@@ -99,7 +99,7 @@ export default function Nav({
               onClick={() => setMenuOpen(false)}
             >
               <Image
-                src="/assets/icons/xmark-solid-full.svg"
+                src="/assets/xmark-solid-full.svg"
                 alt="Menu"
                 width={30}
                 height={30}
