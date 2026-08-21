@@ -5,6 +5,7 @@ import ContactModal from "./components/contactModal";
 import ProjectTiles from "./components/projectTiles";
 import Nav from "./components/Nav";
 import { useContactModal } from "./context/ContactModalContext";
+// import TechSection from "./components/TechSection";
 
 const projects = [
   {
@@ -81,7 +82,7 @@ const projects = [
     title: "Summarist",
     description:
       "Built a full-stack audiobook platform with Next.js and Firebase, featuring secure user accounts, book discovery, detailed book pages, and an integrated audio player through a responsive interface.",
-    liveLink: "https://summarist-app-ten.vercel.app/",
+    liveLink: "https://summarist-app-seven.vercel.app/",
     codeLink: "https://github.com/agulsoy1/Summarist-App.git",
     icons: [
       "/assets/nextjs_icon.png",
@@ -134,18 +135,21 @@ export default function Home() {
       <div
         className={`w-full ${darkMode ? "text-white bg-linear-to-bl from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-tr from-[#826955] to-[#f1e4d2]"}`}
       >
-        <Nav
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-        />
+        <div className={`bg-black`}>
+          <Nav
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+          />
+        </div>
 
         <Hero darkMode={darkMode} />
       </div>
+      {/* <TechSection /> */}
       <section
         id="projects"
-        className={`relative md:mt-30 min-h-screen ${darkMode ? "text-white bg-linear-to-tl from-slate-950 via-slate-900 to-slate-800" : "bg-linear-to-br from-[#826955] to-[#f1e4d2] text-black"} w-full`}
+        className={`relative min-h-screen ${darkMode ? "text-white bg-linear-to-tl from-slate-950 via-slate-900 to-slate-800" : "bg-linear-to-br from-[#826955] to-[#f1e4d2] text-black"} w-full`}
       >
         <div
           className={`flex flex-col items-center text-center gap-4 p-5 rounded-lg fade-in`}
@@ -155,7 +159,7 @@ export default function Home() {
             Here are some of the projects I have created. <br />
             Click on the links to learn more about each project.
           </p>
-          <div className="w-full flex flex-col items-center gap-40 py-20 px-10">
+          <div className="w-full flex flex-col items-center gap-70 py-20 px-10">
             {projects.map((projects) => (
               <ProjectTiles
                 key={projects.title}

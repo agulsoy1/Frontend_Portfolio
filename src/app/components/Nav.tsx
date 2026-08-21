@@ -18,84 +18,107 @@ export default function Nav({
 }: NavProps) {
   const { openContactModal, setOpenContactModal, closeModal } =
     useContactModal();
+  const navLinkClass = `relative text-white 
+                after:content-[''] 
+                after:absolute 
+                after:right-0 
+                after:bottom-0 
+                after:w-0 
+                after:border-b-2 
+                after:border-current 
+                after:transition-all 
+                after:duration-300 
+                after:ease-in-out 
+                hover:after:w-full 
+                hover:after:left-0`;
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "#projects", label: "Projects" },
+    {
+      onClick: () => {
+        if (openContactModal) {
+          closeModal();
+        } else {
+          setOpenContactModal(true);
+        }
+      },
+      label: "Contact",
+    },
+    {
+      onClick: () => setDarkMode(!darkMode),
+      label: "Toggle Dark Mode",
+    },
+  ];
+
   return (
     <>
       <nav
-        className={`fixed z-50 flex items-center justify-between w-full p-5`}
+        className={`fixed z-50 flex items-center justify-between w-full py-4 px-5 bg-black m-5 rounded-[40px]`}
       >
-        <div>
-          <Image
-            src="/assets/logo_edited.png"
-            alt="Logo"
-            width={50}
-            height={50}
-            className="brightness-200"
-          />
-        </div>
-        <div className="flex items-center gap-5">
-          {
-            <button
-              className="md:hidden order-2"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <Image
-                src="/assets/bars-solid-full.svg"
-                alt="Menu"
-                width={25}
-                height={25}
-                className={`${darkMode ? "invert" : ""}`}
-              />
-            </button>
-          }
-          <ul
-            className={`hidden md:flex gap-7 justify-center items-center text-lg`}
+        <Image
+          src="/assets/logo_edited.png"
+          alt="Logo"
+          width={50}
+          height={50}
+          className="brightness-200"
+        />
+        <ul
+          className={`hidden md:flex gap-7 justify-center items-center text-lg text-white`}
+        >
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              {link.href ? (
+                <Link href={link.href} className={navLinkClass}>
+                  {link.label}
+                </Link>
+              ) : (
+                <button onClick={link.onClick}>
+                  {link.label === "Toggle Dark Mode" ? (
+                    darkMode ? (
+                      <Image
+                        src="/assets/sun-solid-full.svg"
+                        alt="Light Mode"
+                        width={20}
+                        height={20}
+                        className="invert"
+                      />
+                    ) : (
+                      <Image
+                        src="/assets/moon-solid-full.svg"
+                        alt="Dark Mode"
+                        width={25}
+                        height={25}
+                        className={`invert`}
+                      />
+                    )
+                  ) : (
+                    <span className={navLinkClass}>{link.label}</span>
+                  )}
+                </button>
+              )}
+            </li>
+          ))}
+        </ul>
+        {
+          <button
+            className="md:hidden order-2"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="#projects">Projects</Link>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  if (openContactModal) {
-                    closeModal();
-                  } else {
-                    setOpenContactModal(true);
-                  }
-                }}
-                className="relative"
-              >
-                Contact
-              </button>
-            </li>
-          </ul>
-          <button onClick={() => setDarkMode(!darkMode)} className="relative">
-            {darkMode ? (
-              <Image
-                src="/assets/sun-solid-full.svg"
-                alt="Light Mode"
-                width={20}
-                height={20}
-                className="invert"
-              />
-            ) : (
-              <Image
-                src="/assets/moon-solid-full.svg"
-                alt="Dark Mode"
-                width={25}
-                height={25}
-              />
-            )}
+            <Image
+              src="/assets/bars-solid-full.svg"
+              alt="Menu"
+              width={25}
+              height={25}
+              className="invert"
+            />
           </button>
-        </div>
+        }
       </nav>
       {menuOpen && (
         <>
           <ul className="fixed inset-0 z-101 overflow-hidden flex flex-col justify-center items-center gap-30 text-3xl bg-black text-white md:hidden">
             <button
-              className="absolute top-5 right-5 md:hidden"
+              className="absolute top-10 right-5 md:hidden"
               onClick={() => setMenuOpen(false)}
             >
               <Image
@@ -106,31 +129,28 @@ export default function Nav({
                 className="invert"
               />
             </button>
-            <li>
-              <Link href="/" onClick={() => setMenuOpen(false)}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" onClick={() => setMenuOpen(false)}>
-                Projects
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  if (openContactModal) {
-                    closeModal();
-                  } else {
-                    setOpenContactModal(true);
-                    setMenuOpen(false);
-                  }
-                }}
-                className="relative"
-              >
-                Contact
-              </button>
-            </li>
+            {navLinks.map((link) => {
+
+              if(link.label === "Toggle Dark Mode") return null;
+              
+              return (
+              <li key={link.label}>
+                {link.href ? (
+                  <Link
+                  href={link.href}
+                  className={navLinkClass}
+                  onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button onClick={link.onClick} className={navLinkClass}>
+                    {link.label}
+                  </button>
+                )}
+              </li>
+            );
+          })}
           </ul>
         </>
       )}

@@ -16,7 +16,7 @@ export default function Hero({darkMode} : {darkMode: boolean}) {
                     Hi, my name is Alex
                   </h1>
                   <p className="lg:text-[22px] max-w-160 text-[16px] fade-in delay-500 transition-opacity">
-                    I am a software developer driven by curiosity and a passion for
+                    I am a junior software developer driven by curiosity and a passion for
                     creative problem-solving. I build responsive, intuitive web
                     applications that create meaningful, user-centered experiences.
                   </p>
@@ -69,7 +69,7 @@ export default function Hero({darkMode} : {darkMode: boolean}) {
                     w-[clamp(100px,25vw,400px)] 
                     h-[clamp(150px,30vw,460px)] 
                     rounded-[50%] border-4 
-                    ${darkMode ? "border-white" : "border-black"} overflow-hidden`}
+                    ${darkMode ? "border-white" : "bg-linear-to-r from-black to-[#c0c0c0]"} overflow-hidden`}
                 >
                   <Image
                     src="/assets/profile_img_wbg.jpg"
