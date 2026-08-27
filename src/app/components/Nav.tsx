@@ -64,7 +64,10 @@ export default function Nav({
             controls
             className="brightness-200"
           />
-          <div className="text-white md:italic font-extralight text-[18px]">Alexandre T. Gulsoy</div>
+          <div className="flex md:flex-row flex-col md:gap-1.5 text-white md:italic font-extralight text-[18px]">
+            <div>Alexandre T.</div>
+            <div>Gulsoy</div>
+          </div>
         </div>
         <div className="flex items-center gap-5">
           <ul
