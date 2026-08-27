@@ -8,17 +8,15 @@ export default function CursorFollower() {
   const mousePosition = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const hasMouse = window.matchMedia("(pointer:fine)").matches;
+    const mouse = window.matchMedia("(pointer:fine)").matches;
 
-    if(!hasMouse) return;
-
+    if (!mouse) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       mousePosition.current = {
         x: e.clientX,
         y: e.clientY,
       };
-
     };
     const animate = () => {
       setPositions((prev) => {
@@ -29,11 +27,11 @@ export default function CursorFollower() {
           y: prev[0].y + (mousePosition.current.y - prev[0].y) * 0.15,
         };
 
-        for(let i = 1; i < newPositions.length; i++){
+        for (let i = 1; i < newPositions.length; i++) {
           newPositions[i] = {
-            x: prev[i].x + (prev[i-1].x - prev[i].x) * .15,
-            y: prev[i].y + (prev[i-1].y - prev[i].y) * .15,
-          }
+            x: prev[i].x + (prev[i - 1].x - prev[i].x) * 0.15,
+            y: prev[i].y + (prev[i - 1].y - prev[i].y) * 0.15,
+          };
         }
 
         return newPositions;
@@ -55,7 +53,7 @@ export default function CursorFollower() {
         return (
           <div
             key={index}
-            className="fixed rounded-[10px] bg-white pointer-events-none z-200"
+            className="hidden pointer-fine:block fixed rounded-[10px] bg-white pointer-events-none z-200"
             style={{
               width: size,
               height: size,
