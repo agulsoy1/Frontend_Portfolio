@@ -27,37 +27,40 @@ export default function Home() {
         openContactModal ? "blur-sm" : ""
       }`}
     >
+      <BackToTop darkMode={darkMode} />
+
+      {openContactModal && (
+        <ContactModal isClosing={isClosing} closeModal={closeModal} />
+      )}
+
       <Nav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
       />
-      <BackToTop darkMode={darkMode} />
-      <section className="w-full">
-        {openContactModal && (
-          <ContactModal isClosing={isClosing} closeModal={closeModal} />
-        )}
-        <div
-          className={`w-full ${darkMode ? "text-white bg-linear-to-bl from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-tr from-[#826955] to-[#f1e4d2]"}`}
-        >
-          <section id="home">
-            <Hero darkMode={darkMode} />
-          </section>
-        </div>
+
+      <section
+        id="home"
+        className={`w-full ${darkMode ? "text-white bg-linear-to-bl from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-tr from-[#826955] to-[#f1e4d2]"}`}
+      >
+        <Hero darkMode={darkMode} />
       </section>
+
       <section
         id="about"
         className={`w-full h-full scroll-mt-27 ${darkMode ? "text-white bg-linear-to-l from-[#0e162a] to-[#1c283c]" : "bg-linear-to-r from-[#826955] to-[#b8a592] text-black"}`}
       >
         <About darkMode={darkMode} />
       </section>
+
       <section
         id="projects"
         className={`w-full h-full scroll-mt-27 ${darkMode ? "text-white bg-linear-to-tl from-slate-950 via-slate-900 to-slate-800" : "bg-linear-to-br from-[#826955] to-[#f1e4d2] text-black"}`}
       >
         <Projects darkMode={darkMode} />
       </section>
+
       <footer
         className={`relative bottom-0 w-full p-5 text-center bg-black text-white`}
       >
