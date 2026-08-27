@@ -39,7 +39,7 @@ export default function ContactModal({
       >
         <button onClick={closeModal} className="visible lg:invisible absolute top-5 right-5 font-lightbold text-[40px]">
           <Image
-            src="/assets/Icons/xmark-solid-full.svg"
+            src="/assets/xmark-solid-full.png"
             alt="Close Icon"
             width={40}
             height={40}
@@ -60,42 +60,42 @@ export default function ContactModal({
           <ul className="flex items-center justify-center gap-5 flex-wrap mx-10 md:mx-20 sm:mx-0">
             <TechStack
               techName="React"
-              techIcon="/assets/Icons/react_icon.png"
+              techIcon="/assets/react_icon.png"
               techAlt="React Icon"
             />
             <TechStack
               techName="HTML"
-              techIcon="/assets/Icons/html_icon.png"
+              techIcon="/assets/html_icon.png"
               techAlt="HTML Icon"
             />
             <TechStack
               techName="CSS"
-              techIcon="/assets/Icons/css_icon.png"
+              techIcon="/assets/tailwindCSS_icon.png"
               techAlt="CSS Icon"
             />
             <TechStack
               techName="JavaScript"
-              techIcon="/assets/Icons/javascript_icon.png"
+              techIcon="/assets/javascript_icon.png"
               techAlt="JavaScript Icon"
             />
             <TechStack
               techName="NodeJS"
-              techIcon="/assets/Icons/nodejs_icon.png"
+              techIcon="/assets/nodejs_icon.png"
               techAlt="Node.js Icon"
             />
             <TechStack
               techName="TypeScript"
-              techIcon="/assets/Icons/typescript_icon.png"
+              techIcon="/assets/typescript_icon.png"
               techAlt="TypeScript Icon"
             />
             <TechStack
               techName="Redux"
-              techIcon="/assets/Icons/redux_icon.png"
+              techIcon="/assets/redux_icon.png"
               techAlt="Redux Icon"
             />
             <TechStack
               techName="NextJS"
-              techIcon="/assets/Icons/nextjs_icon.png"
+              techIcon="/assets/nextjs_icon.png"
               techAlt="NextJS Icon"
             />
           </ul>
@@ -106,7 +106,7 @@ export default function ContactModal({
       >
         <button onClick={closeModal} className="invisible lg:visible absolute top-5 right-5 invert font-lightbold text-[40px]">
           <Image
-            src="/assets/Icons/xmark-solid-full.svg"
+            src="/assets/xmark-solid-full.png"
             alt="Close Icon"
             width={40}
             height={40}
