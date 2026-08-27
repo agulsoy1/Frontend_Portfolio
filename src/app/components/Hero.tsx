@@ -5,7 +5,7 @@ import Background_Anim from "./Background_Anim";
 export default function Hero({ darkMode }: { darkMode: boolean }) {
   return (
     <section
-      className={`relative w-full flex-1 flex xl:flex-row flex-col items-center justify-center min-h-screen gap-5 overflow-hidden pt-24 xl:pt-0`}
+      className={`relative w-full flex-1 flex xl:flex-row flex-col items-center justify-center min-h-screen gap-5 overflow-hidden pt-30 xl:pt-0`}
     >
       <div
         className={`order-2 flex flex-col items-center xl:items-start justify-evenly gap-4 p-5 rounded-lg`}
