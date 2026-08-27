@@ -50,7 +50,7 @@ export default function Nav({
   return (
     <>
       <nav
-        className={`fixed top-2 left-2 right-2 z-200 flex items-center justify-between py-4 px-5 bg-black rounded-[40px]`}
+        className={`fixed top-2 left-2 right-2 z-200 flex items-center justify-between py-3 px-5 bg-black rounded-[40px]`}
       >
         <div className="flex items-center gap-1">
           <video
