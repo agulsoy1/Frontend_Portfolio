@@ -21,7 +21,7 @@ export default function ProjectTiles({
   toolsUsed,
 }: ProjectTilesType) {
   return (
-    <div className="group relative shadow-lg bg-white rounded-[20px] w-full min-h-80 md:max-w-250 md:max-h-150 overflow-hidden">
+    <div className="group relative shadow-lg bg-white rounded-[20px] w-full md:max-w-250 md:max-h-150 overflow-hidden">
       <Image
         src={projectImage}
         alt="Project Image"

@@ -29,7 +29,7 @@ export default function Nav({
                 after:transition-all 
                 after:duration-300 
                 after:ease-in-out 
-                hover:after:w-full 
+                hover:after:w-full
                 hover:after:left-0`;
   const navLinks = [
     { href: "/", label: "Home" },
@@ -54,17 +54,18 @@ export default function Nav({
   return (
     <>
       <nav
-        className={`fixed z-250 flex items-center justify-between w-full py-4 px-5 bg-black m-3 rounded-[40px]`}
+        className={`fixed z-200 flex items-center justify-between w-full py-4 px-5 bg-black m-3 rounded-[40px]`}
       >
         <video
-          src="/assets/logo_animation.mp4"
-          width={50}
-          height={50}
+          src="/assets/logo_anim_wobg.mp4"
+          width={100}
+          height={100}
           autoPlay
           loop
           muted
           playsInline
           controls
+          className="brightness-200"
         />
 
         {/* <Image
@@ -128,13 +129,13 @@ export default function Nav({
       </nav>
       {menuOpen && (
         <>
-          <ul className="fixed inset-0 z-101 overflow-hidden flex flex-col justify-center items-center gap-30 text-3xl bg-black text-white md:hidden">
+          <ul className="fixed inset-0 z-201 overflow-hidden flex flex-col justify-center items-center gap-30 text-3xl bg-black text-white md:hidden">
             <button
               className="absolute top-10 right-5 md:hidden"
               onClick={() => setMenuOpen(false)}
             >
               <Image
-                src="/assets/xmark-solid-full.svg"
+                src="/assets/xmark-solid-full.png"
                 alt="Menu"
                 width={30}
                 height={30}
@@ -142,27 +143,26 @@ export default function Nav({
               />
             </button>
             {navLinks.map((link) => {
+              if (link.label === "Toggle Dark Mode") return null;
 
-              if(link.label === "Toggle Dark Mode") return null;
-              
               return (
-              <li key={link.label}>
-                {link.href ? (
-                  <Link
-                  href={link.href}
-                  className={navLinkClass}
-                  onClick={() => setMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <button onClick={link.onClick} className={navLinkClass}>
-                    {link.label}
-                  </button>
-                )}
-              </li>
-            );
-          })}
+                <li key={link.label}>
+                  {link.href ? (
+                    <Link
+                      href={link.href}
+                      className={navLinkClass}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <button onClick={link.onClick} className={navLinkClass}>
+                      {link.label}
+                    </button>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </>
       )}

@@ -115,7 +115,7 @@ const descriptions = {
 };
 
 export default function About({ darkMode }: { darkMode: boolean }) {
-  const cardStyle = `max-w-175 w-full flex flex-col items-start justify-center gap-5 p-5 rounded-xl border-2 ${darkMode ? "bg-[#020617] border-white" : "bg-[#6D5947] border-black"} text-[#f8efe3]`;
+  const cardStyle = `max-w-175 w-full flex flex-col items-start justify-center gap-5 p-5 rounded-xl transition-all hover:scale-102 duration-300 hover:shadow-[2px_2px_10px_rgba(0,0,0,.5)] border-2 ${darkMode ? "bg-[#020617] border-white" : "bg-[#6D5947] border-black"} text-[#f8efe3]`;
   const cardTitle = "font-extrabold text-xl text-white";
   return (
     <div
@@ -141,10 +141,10 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                 ([category, { items, dark, light }], index) => (
                   <div
                     key={category}
-                    className={`flex flex-col items-start gap-2 ${index === 0 ? "mt-0" : "mt-7"}`}
+                    className={`flex flex-col md:items-start items-center gap-2 ${index === 0 ? "mt-0" : "mt-7"}`}
                   >
                     <h3 className="font-medium text-lg">{category}</h3>
-                    <ul className="flex flex-wrap font-light justify-start items-center gap-5">
+                    <ul className="flex flex-wrap font-light md:justify-start justify-center items-center gap-5">
                       {items.map((tool) => (
                         <li
                           key={tool}
@@ -170,7 +170,9 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                   {descriptions.educationDesc.school}
                 </span>
               </h2>
-              <div className={`${darkMode ? "bg-[#1e293b]" : "bg-[#524235]"} rounded-lg p-3 flex gap-5 items-center`}>
+              <div
+                className={`${darkMode ? "bg-[#1e293b]" : "bg-[#524235]"} md:text-left text-center rounded-lg p-3 flex flex-col md:flex-row gap-5 items-center`}
+              >
                 <Image
                   src={descriptions.educationDesc.image}
                   alt="UCSC Degree"
@@ -190,7 +192,7 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                   </p>
                 </div>
               </div>
-              <p>
+              <p className="md:text-left text-center">
                 {descriptions.educationDesc.description}
                 <br /> These projects can be seen in my{" "}
                 <span className="font-bold">Other Works</span> section below.
@@ -204,9 +206,9 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                 {descriptions.certificates.map((cert, index) => (
                   <div
                     key={index}
-                    className="w-full flex items-center justify-center gap-5"
+                    className="w-full flex flex-col md:flex-row items-center justify-center gap-5"
                   >
-                    <div className="w-1/2 flex flex-col gap-2">
+                    <div className="md:text-left text-center w-full md:w-1/2 flex flex-col gap-2 md:order-1 order-2">
                       <p className="font-light">{cert.description}</p>
                       <div className="font-light">
                         <span className="font-bold">Issued:</span> {cert.date}
@@ -215,7 +217,7 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                         <span className="font-bold">Issuer:</span> {cert.issuer}
                       </div>
                     </div>
-                    <div className="w-1/2 flex flex-col items-center justify-center text-center font-bold gap-2">
+                    <div className="md:w-1/2 w-full flex flex-col items-center justify-center text-center font-bold gap-2">
                       <div>{cert.title}</div>
                       <Image
                         src={cert.image}
@@ -244,12 +246,13 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                       <h3 className="text-lg font-extrabold">
                         {project.title}
                       </h3>
-                      <div className="flex gap-5">
+                      <div className="flex-col md:flex gap-5">
                         <Image
                           src={project.image}
                           alt={project.title}
                           width={400}
                           height={200}
+                          className="w-full max-w-100 h-auto"
                         />
                         <div className="flex flex-col justify-evenly">
                           <div>
@@ -257,7 +260,7 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                               Released:{" "}
                               <span className="font-light">{project.date}</span>
                             </h3>
-                            <p className="text-md max-w-150">
+                            <p className="text-center md:text-left text-md max-w-150">
                               {project.description}
                             </p>
                           </div>
@@ -265,7 +268,7 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-md underline hover:opacity-80"
+                            className="text-center md:text-left text-md underline hover:opacity-80"
                           >
                             {project.link}
                           </a>
@@ -278,7 +281,7 @@ export default function About({ darkMode }: { darkMode: boolean }) {
             </div>
           </FadeInSections>
           <FadeInSections>
-            <div className={`max-w-200 ${cardStyle}`}>
+            <div className={`max-w-200 md:text-left text-center ${cardStyle}`}>
               <h2 className={cardTitle}>{buttons.hobbies}</h2>
               <p>{descriptions.hobbiesDesc}</p>
             </div>

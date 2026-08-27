@@ -1,7 +1,7 @@
 "use client";
 import Hero from "./components/Hero";
 import { useEffect, useState } from "react";
-import ContactModal from "./components/contactModal";
+import ContactModal from "./components/ContactModal";
 import ProjectTiles from "./components/projectTiles";
 import Nav from "./components/Nav";
 import { useContactModal } from "./context/ContactModalContext";
