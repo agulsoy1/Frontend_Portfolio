@@ -50,19 +50,22 @@ export default function Nav({
   return (
     <>
       <nav
-        className={`fixed top-2 left-2 right-2 z-200 flex items-center justify-between w-full py-4 px-5 bg-black rounded-[40px]`}
+        className={`fixed top-2 left-2 right-2 z-200 flex items-center justify-between py-4 px-5 bg-black rounded-[40px]`}
       >
-        <video
-          src="/assets/logo_anim_wobg.mp4"
-          width={100}
-          height={100}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls
-          className="brightness-200"
-        />
+        <div className="flex items-center gap-1">
+          <video
+            src="/assets/alexgulsoy.dev.logo_anim_wobg.mp4"
+            width={100}
+            height={100}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls
+            className="brightness-200"
+          />
+          <div className="text-white md:italic font-extralight text-[18px]">Alexandre T. Gulsoy</div>
+        </div>
         <div className="flex items-center gap-5">
           <ul
             className={`hidden md:flex gap-7 justify-center items-center text-lg text-white`}

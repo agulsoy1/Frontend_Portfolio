@@ -18,7 +18,7 @@ export default function FadeInSections({
         }
       },
       {
-        threshold: .75,
+        threshold: .25,
       },
     );
 
@@ -32,7 +32,7 @@ export default function FadeInSections({
   return (
     <div
       ref={sectionRef}
-      className={`flex justify-center transition-all duration-2000 ease-out w-full ${
+      className={`flex justify-center transition-all duration-1000 ease-out w-full ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
       }`}
     >
