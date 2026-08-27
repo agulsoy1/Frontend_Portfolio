@@ -86,7 +86,7 @@ export default function Hero({ darkMode }: { darkMode: boolean }) {
           />
         </figure>
       </div>
-      <Background_Anim />
+      <Background_Anim darkMode={darkMode} />
     </section>
   );
 }
