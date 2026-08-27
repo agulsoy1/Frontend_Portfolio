@@ -18,7 +18,7 @@ export default function FadeInSections({
         }
       },
       {
-        threshold: .25,
+        threshold: .15,
       },
     );
 

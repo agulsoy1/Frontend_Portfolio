@@ -8,6 +8,11 @@ export default function CursorFollower() {
   const mousePosition = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    const hasMouse = window.matchMedia("(pointer:fine)").matches;
+
+    if(!hasMouse) return;
+
+
     const handleMouseMove = (e: MouseEvent) => {
       mousePosition.current = {
         x: e.clientX,
