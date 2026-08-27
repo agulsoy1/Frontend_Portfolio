@@ -14,16 +14,16 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    document.body.style.overflow = menuOpen ? "hidden" : "";
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [menuOpen]);
 
   return (
     <div
-      className={`flex flex-col items-center min-h-screen w-full overflow-hidden ${
+      className={`flex flex-col items-center min-h-screen w-full ${
         openContactModal ? "blur-sm" : ""
       }`}
     >
