@@ -15,11 +15,11 @@ export default function Background_Anim({darkMode}: {darkMode: boolean}) {
   }));
 
   return (
-    <div className="absolute w-full h-screen inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden pointer-eveents-none">
       {particles.map(({ id, size, delay, x, y }) => (
         <div
           key={id}
-          className={`absolute opacity-25 m-5 rounded-[5px] fade-in pulse-in-out ${darkMode ? "bg-[#d8c4ad]" : "bg-[#0e162a]"}`}
+          className={`absolute opacity-25 rounded-[5px] fade-in pulse-in-out ${darkMode ? "bg-[#d8c4ad]" : "bg-[#0e162a]"}`}
           style={{
             width: `${size.toFixed(2)}px`,
             height: `${size.toFixed(2)}px`,
