@@ -31,7 +31,9 @@ export default function ProjectTiles({
       />
       <div className="absolute inset-0 flex md:flex-col flex-row gap-4 items-center md:justify-evenly hover:fade-in-right hover:bg-black/90 hover:text-white transition duration-500 ease-in-out py-[clamp(10px,2vw,15px)]">
         <div className="flex flex-col gap-4 items-center">
-          <h2 className={`group-hover:visible invisible text-[clamp(20px,2vw,30px)]`}>
+          <h2
+            className={`group-hover:visible invisible text-[clamp(20px,2vw,30px)]`}
+          >
             {projectTitle}
           </h2>
           <h3 className="group-hover:visible invisible text-[clamp(10px,2vw,20px)] md:mx-30 mx-0">
@@ -40,7 +42,10 @@ export default function ProjectTiles({
         </div>
         <div className="group-hover:visible invisible flex gap-5">
           {toolsUsed.map((tool, index) => (
-            <div key={index} className="flex flex-col gap-2 items-center justify-center">
+            <div
+              key={index}
+              className="flex flex-col gap-2 items-center justify-center"
+            >
               <Image src={iconsUsed[index]} alt={tool} width={40} height={40} />
               <p className="text-[15px]">{tool}</p>
             </div>

@@ -27,7 +27,7 @@
 //       setCurrentIndex((prevIndex) =>
 //         prevIndex === tools.length - 1 ? 0 : prevIndex + 1,
 //       );
-//     }, 500);
+//     }, 300);
 
 //     return () => clearInterval(interval);
 //   }, []);
@@ -35,7 +35,7 @@
 //   return (
 //     <div className="relative flex justify-center items-center h-full bg-black" style={{ height: "100px", width: "100%" }}>
 //       <div
-//         className="flex transition-transform duration-300"
+//         className="flex transition-transform duration-1000 backwards"
 //         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
 //       >
 //         {tools.map((tool, index) => (

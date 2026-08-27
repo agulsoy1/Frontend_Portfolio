@@ -5,6 +5,9 @@ import ContactModal from "./components/contactModal";
 import ProjectTiles from "./components/projectTiles";
 import Nav from "./components/Nav";
 import { useContactModal } from "./context/ContactModalContext";
+import FadeInSections from "./components/FadeInSections";
+import About from "./components/About";
+import BackToTop from "./components/BackToTop";
 // import TechSection from "./components/TechSection";
 
 const projects = [
@@ -125,52 +128,62 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col items-center min-h-screen w-full ${
+      className={`flex flex-col items-center min-h-screen w-full overflow-hidden ${
         openContactModal ? "blur-sm" : ""
       }`}
     >
-      {openContactModal && (
-        <ContactModal isClosing={isClosing} closeModal={closeModal} />
-      )}
-      <div
-        className={`w-full ${darkMode ? "text-white bg-linear-to-bl from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-tr from-[#826955] to-[#f1e4d2]"}`}
-      >
-        <div className={`bg-black`}>
-          <Nav
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-          />
-        </div>
+      <BackToTop darkMode={darkMode} />
+      <section className="w-full">
+        {openContactModal && (
+          <ContactModal isClosing={isClosing} closeModal={closeModal} />
+        )}
+        <div
+          className={`w-full ${darkMode ? "text-white bg-linear-to-bl from-slate-950 via-slate-900 to-slate-800" : "text-black bg-linear-to-tr from-[#826955] to-[#f1e4d2]"}`}
+        >
+          <div className={`bg-black`}>
+            <Nav
+              menuOpen={menuOpen}
+              setMenuOpen={setMenuOpen}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+            />
+          </div>
 
-        <Hero darkMode={darkMode} />
-      </div>
-      {/* <TechSection /> */}
+          <Hero darkMode={darkMode} />
+        </div>
+      </section>
+      <section id="about" className={`w-full h-full ${darkMode ? "text-white bg-linear-to-l from-[#0e162a] to-[#1c283c]" : "bg-linear-to-r from-[#826955] to-[#b8a592] text-black"}`}>
+        <About darkMode={darkMode} />
+      </section>
       <section
         id="projects"
         className={`relative min-h-screen ${darkMode ? "text-white bg-linear-to-tl from-slate-950 via-slate-900 to-slate-800" : "bg-linear-to-br from-[#826955] to-[#f1e4d2] text-black"} w-full`}
       >
         <div
-          className={`flex flex-col items-center text-center gap-4 p-5 rounded-lg fade-in`}
+          className={`flex flex-col items-center text-center gap-4 p-5 rounded-lg`}
         >
-          <h1 className={`text-4xl font-bold `}>Projects</h1>
-          <p className="text-lg">
-            Here are some of the projects I have created. <br />
-            Click on the links to learn more about each project.
-          </p>
-          <div className="w-full flex flex-col items-center gap-70 py-20 px-10">
+          <FadeInSections>
+            <h1 className={`text-3xl font-bold `}>Projects</h1>
+          </FadeInSections>
+          <FadeInSections>
+            <p className="text-lg">
+              Here are some of the projects I have created. <br />
+              Hover over the cards to learn more about each project.
+            </p>
+          </FadeInSections>
+          <div className="w-full flex flex-col items-center gap-50 py-20 px-10">
             {projects.map((projects) => (
-              <ProjectTiles
-                key={projects.title}
-                projectImage={projects.image}
-                projectTitle={projects.title}
-                projectDesc={projects.description}
-                liveLink={projects.liveLink}
-                codeLink={projects.codeLink}
-                iconsUsed={projects.icons}
-                toolsUsed={projects.tools}
-              />
+              <FadeInSections key={projects.title}>
+                <ProjectTiles
+                  projectImage={projects.image}
+                  projectTitle={projects.title}
+                  projectDesc={projects.description}
+                  liveLink={projects.liveLink}
+                  codeLink={projects.codeLink}
+                  iconsUsed={projects.icons}
+                  toolsUsed={projects.tools}
+                />
+              </FadeInSections>
             ))}
           </div>
         </div>
