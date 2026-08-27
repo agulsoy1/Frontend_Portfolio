@@ -5,7 +5,7 @@ function pseudoRandom(seed: number) {
   return x - Math.floor(x);
 }
 
-export default function Background_Anim() {
+export default function Background_Anim({darkMode}: {darkMode: boolean}) {
   const particles = Array.from({ length: 100 }).map((_, index) => ({
     id: index,
     size: pseudoRandom(index * 4 + 1) * 20 + 15,
@@ -19,7 +19,7 @@ export default function Background_Anim() {
       {particles.map(({ id, size, delay, x, y }) => (
         <div
           key={id}
-          className="absolute opacity-25 m-5 bg-white rounded-[5px] fade-in pulse-in-out"
+          className={`absolute opacity-25 m-5 rounded-[5px] fade-in pulse-in-out ${darkMode ? "bg-[#d8c4ad]" : "bg-[#0e162a]"}`}
           style={{
             width: `${size.toFixed(2)}px`,
             height: `${size.toFixed(2)}px`,
