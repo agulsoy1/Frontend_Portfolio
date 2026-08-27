@@ -33,6 +33,7 @@ export default function Nav({
                 hover:after:left-0`;
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     {
       onClick: () => {
@@ -53,15 +54,26 @@ export default function Nav({
   return (
     <>
       <nav
-        className={`fixed z-50 flex items-center justify-between w-full py-4 px-5 bg-black m-5 rounded-[40px]`}
+        className={`fixed z-250 flex items-center justify-between w-full py-4 px-5 bg-black m-3 rounded-[40px]`}
       >
-        <Image
+        <video
+          src="/assets/logo_animation.mp4"
+          width={50}
+          height={50}
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls
+        />
+
+        {/* <Image
           src="/assets/logo_edited.png"
           alt="Logo"
           width={50}
           height={50}
           className="brightness-200"
-        />
+        /> */}
         <ul
           className={`hidden md:flex gap-7 justify-center items-center text-lg text-white`}
         >
