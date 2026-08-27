@@ -194,8 +194,9 @@ export default function About({ darkMode }: { darkMode: boolean }) {
               </div>
               <p className="md:text-left text-center">
                 {descriptions.educationDesc.description}
-                <br /> These projects can be seen in my{" "}
-                <span className="font-bold">Other Works</span> section below.
+              </p>
+              <p className="md:text-left text-center">
+                These projects can be seen in my <span className="font-bold">Other Works</span> section.
               </p>
             </div>
           </FadeInSections>
@@ -246,7 +247,7 @@ export default function About({ darkMode }: { darkMode: boolean }) {
                       <h3 className="text-lg font-extrabold">
                         {project.title}
                       </h3>
-                      <div className="flex-col md:flex gap-5">
+                      <div className="flex flex-col md:flex-row gap-5">
                         <Image
                           src={project.image}
                           alt={project.title}

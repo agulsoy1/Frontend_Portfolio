@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useContactModal } from "../context/ContactModalContext";
-import Link from "next/link";
 
 type NavProps = {
   menuOpen: boolean;
@@ -32,7 +32,7 @@ export default function Nav({
                 hover:after:w-full
                 hover:after:left-0`;
   const navLinks = [
-    { href: "/", label: "Home" },
+    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     {
@@ -45,16 +45,12 @@ export default function Nav({
       },
       label: "Contact",
     },
-    {
-      onClick: () => setDarkMode(!darkMode),
-      label: "Toggle Dark Mode",
-    },
   ];
 
   return (
     <>
       <nav
-        className={`fixed z-200 flex items-center justify-between w-full py-4 px-5 bg-black m-3 rounded-[40px]`}
+        className={`fixed top-2 left-2 right-2 z-200 flex items-center justify-between w-full py-4 px-5 bg-black rounded-[40px]`}
       >
         <video
           src="/assets/logo_anim_wobg.mp4"
@@ -67,65 +63,66 @@ export default function Nav({
           controls
           className="brightness-200"
         />
-
-        {/* <Image
-          src="/assets/logo_edited.png"
-          alt="Logo"
-          width={50}
-          height={50}
-          className="brightness-200"
-        /> */}
-        <ul
-          className={`hidden md:flex gap-7 justify-center items-center text-lg text-white`}
-        >
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              {link.href ? (
-                <Link href={link.href} className={navLinkClass}>
-                  {link.label}
-                </Link>
-              ) : (
-                <button onClick={link.onClick}>
-                  {link.label === "Toggle Dark Mode" ? (
-                    darkMode ? (
-                      <Image
-                        src="/assets/sun-solid-full.svg"
-                        alt="Light Mode"
-                        width={20}
-                        height={20}
-                        className="invert"
-                      />
-                    ) : (
-                      <Image
-                        src="/assets/moon-solid-full.svg"
-                        alt="Dark Mode"
-                        width={25}
-                        height={25}
-                        className={`invert`}
-                      />
-                    )
-                  ) : (
-                    <span className={navLinkClass}>{link.label}</span>
-                  )}
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
-        {
-          <button
-            className="md:hidden order-2"
-            onClick={() => setMenuOpen(!menuOpen)}
+        <div className="flex items-center gap-5">
+          <ul
+            className={`hidden md:flex gap-7 justify-center items-center text-lg text-white`}
           >
-            <Image
-              src="/assets/bars-solid-full.svg"
-              alt="Menu"
-              width={25}
-              height={25}
-              className="invert"
-            />
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                {link.href === "/" ? (
+                  <Link href={link.href} className={navLinkClass}>
+                    {link.label}
+                  </Link>
+                ) : link.href ? (
+                  <a href={link.href} className={navLinkClass}>
+                    {link.label}
+                  </a>
+                ) : (
+                  ""
+                )}
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={() => {
+              setDarkMode(!darkMode);
+              setMenuOpen(false);
+            }}
+            className="md:order-2 order-1"
+          >
+            {darkMode ? (
+              <Image
+                src="/assets/sun-solid-full.svg"
+                alt="Light Mode"
+                width={25}
+                height={25}
+                className="invert"
+              />
+            ) : (
+              <Image
+                src="/assets/moon-solid-full.svg"
+                alt="Dark Mode"
+                width={25}
+                height={25}
+                className={`invert`}
+              />
+            )}
           </button>
-        }
+          {
+            <button
+              className="md:hidden order-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <Image
+                src="/assets/bars-solid-full.svg"
+                alt="Menu"
+                width={25}
+                height={25}
+                className="invert"
+              />
+            </button>
+          }
+        </div>
       </nav>
       {menuOpen && (
         <>
@@ -143,18 +140,16 @@ export default function Nav({
               />
             </button>
             {navLinks.map((link) => {
-              if (link.label === "Toggle Dark Mode") return null;
-
               return (
                 <li key={link.label}>
                   {link.href ? (
-                    <Link
+                    <a
                       href={link.href}
                       className={navLinkClass}
                       onClick={() => setMenuOpen(false)}
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   ) : (
                     <button onClick={link.onClick} className={navLinkClass}>
                       {link.label}
