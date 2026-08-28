@@ -32,7 +32,7 @@ export default function ContactModal({
   }
 
   return (
-    <div className="h-screen w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col lg:flex-row items-center justify-center lg:w-300 lg:h-200 bg-opacity-50 z-150 md:rounded-[25px] overflow-hidden">
+    <div className="h-screen w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col lg:flex-row items-center justify-center lg:w-300 lg:h-200 bg-opacity-50 z-150 md:rounded-[25px]">
       <div
         className={`h-full bg-white w-full lg:w-1/2 text-center text-black p-5 ${isClosing ? "fade-out-left" : "fade-in-left"} flex flex-col items-center`}
       >
