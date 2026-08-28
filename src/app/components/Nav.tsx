@@ -84,7 +84,9 @@ export default function Nav({
                     {link.label}
                   </a>
                 ) : (
-                  ""
+                  <button onClick={link.onClick} className={navLinkClass}>
+                    {link.label}
+                  </button>
                 )}
               </li>
             ))}

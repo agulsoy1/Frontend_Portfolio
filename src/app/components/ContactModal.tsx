@@ -119,12 +119,14 @@ export default function ContactModal({
           <input
             type="text"
             placeholder="John Doe"
+            required
             className="p-5 w-full h-5 bg-white text-black"
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <input
             type="tel"
             placeholder="(123) 456-7890"
+            required
             className="p-5 w-full h-5 bg-white text-black"
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
@@ -133,6 +135,7 @@ export default function ContactModal({
           <input
             type="email"
             placeholder="johndoe98@gmail.com"
+            required
             className="p-5 w-full h-5 bg-white text-black"
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
@@ -140,6 +143,7 @@ export default function ContactModal({
           />
           <textarea
             placeholder="Your message"
+            required
             className="p-5 w-full h-40 bg-white text-black"
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
