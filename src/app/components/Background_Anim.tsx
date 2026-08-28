@@ -19,7 +19,7 @@ export default function Background_Anim({darkMode}: {darkMode: boolean}) {
       {particles.map(({ id, size, delay, x, y }) => (
         <div
           key={id}
-          className={`absolute opacity-25 rounded-[5px] fade-in pulse-in-out ${darkMode ? "bg-[#d8c4ad]" : "bg-[#0e162a]"}`}
+          className={`absolute opacity-25 rounded-[5px] fade-in pulse-in-out ${darkMode ? "bg-white" : "bg-black"}`}
           style={{
             width: `${size.toFixed(2)}px`,
             height: `${size.toFixed(2)}px`,
