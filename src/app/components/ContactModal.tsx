@@ -17,18 +17,27 @@ export default function ContactModal({
     message: "",
   });
 
-  async function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    try {
+      const response = await fetch("api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    await fetch("api/contact", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
 
-    alert("Message Sent");
+      alert("Message Sent");
+      closeModal();
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again later.");
+    }
   }
 
   return (
@@ -36,7 +45,10 @@ export default function ContactModal({
       <div
         className={`flex justify-center items-center lg:h-full bg-white w-full lg:w-1/2 text-center text-black p-5 ${isClosing ? "fade-out-left" : "fade-in-left"} flex flex-col items-center`}
       >
-        <button onClick={closeModal} className="visible lg:invisible absolute top-5 right-5 font-lightbold text-[40px]">
+        <button
+          onClick={closeModal}
+          className="visible lg:invisible absolute top-5 right-5 font-lightbold text-[40px]"
+        >
           <Image
             src="/assets/xmark-solid-full.png"
             alt="Close Icon"
@@ -45,7 +57,9 @@ export default function ContactModal({
           />
         </button>
         <div className="md:my-20 my-3">
-          <h2 className="text-[24px] xl:text-[28px] font-medium mb-3">Who Am I?</h2>
+          <h2 className="text-[24px] xl:text-[28px] font-medium mb-3">
+            Who Am I?
+          </h2>
           <p className="text-[15px] xl:text-xl mx-5 md:mx-10 md:text-lg">
             My name is Alexandre Turgut Gulsoy, and I&apos;m a software
             developer with a focus on building responsive, modern web
@@ -55,7 +69,9 @@ export default function ContactModal({
           </p>
         </div>
         <div>
-          <p className="mb-10 text-[20px] xl:text-[24px] font-medium">My Technology Stack</p>
+          <p className="mb-10 text-[20px] xl:text-[24px] font-medium">
+            My Technology Stack
+          </p>
           <ul className="flex items-center justify-center md:gap-5 flex-wrap mx-5 md:mx-20 sm:mx-0">
             <TechStack
               techName="React"
@@ -103,7 +119,10 @@ export default function ContactModal({
       <div
         className={`lg:h-full w-full lg:w-1/2 text-white bg-black p-5 flex flex-col items-center ${isClosing ? "fade-out-right" : "fade-in-right"}`}
       >
-        <button onClick={closeModal} className="invisible lg:visible absolute top-5 right-5 invert font-lightbold text-[40px]">
+        <button
+          onClick={closeModal}
+          className="invisible lg:visible absolute top-5 right-5 invert font-lightbold text-[40px]"
+        >
           <Image
             src="/assets/xmark-solid-full.png"
             alt="Close Icon"
@@ -145,6 +164,12 @@ export default function ContactModal({
             placeholder="Your message"
             required
             className="p-5 w-full h-40 bg-white text-black"
+            onKeyDown={(e) => {
+              if(e.key === "Enter") {
+                e.preventDefault();
+                e.currentTarget.form?.requestSubmit();
+              }
+            }}
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
