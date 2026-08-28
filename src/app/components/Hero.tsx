@@ -80,8 +80,8 @@ export default function Hero({ darkMode }: { darkMode: boolean }) {
           <Image
             src="/assets/profile_img_wbg.jpg"
             alt="Profile Picture"
-            width={100}
-            height={100}
+            width={800}
+            height={980}
             className="absolute inset-0 w-full h-full object-cover"
           />
         </figure>
