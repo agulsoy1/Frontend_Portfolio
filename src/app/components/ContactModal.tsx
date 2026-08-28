@@ -32,9 +32,9 @@ export default function ContactModal({
   }
 
   return (
-    <div className="h-screen w-full fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col lg:flex-row items-center justify-center lg:w-300 lg:h-200 bg-opacity-50 z-150 md:rounded-[25px]">
+    <div className="fixed inset-0 z-150 w-full h-dvh flex flex-col lg:flex-row lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-300 lg:h-200 bg-opacity-50 md:rounded-[25px] overflow-y-auto">
       <div
-        className={`h-full bg-white w-full lg:w-1/2 text-center text-black p-5 ${isClosing ? "fade-out-left" : "fade-in-left"} flex flex-col items-center`}
+        className={`flex justify-center items-center lg:h-full bg-white w-full lg:w-1/2 text-center text-black p-5 ${isClosing ? "fade-out-left" : "fade-in-left"} flex flex-col items-center`}
       >
         <button onClick={closeModal} className="visible lg:invisible absolute top-5 right-5 font-lightbold text-[40px]">
           <Image
@@ -44,9 +44,9 @@ export default function ContactModal({
             height={40}
           />
         </button>
-        <div className="md:my-20 my-5">
-          <h2 className="text-[24px] xl:text-[28px] font-medium mb-5">Who Am I?</h2>
-          <p className="text-[15px] xl:text-xl flex flex-wrap mx-20 xl:mx-10 md:mx-10 md:text-lg">
+        <div className="md:my-20 my-3">
+          <h2 className="text-[24px] xl:text-[28px] font-medium mb-3">Who Am I?</h2>
+          <p className="text-[15px] xl:text-xl mx-5 md:mx-10 md:text-lg">
             My name is Alexandre Turgut Gulsoy, and I&apos;m a software
             developer with a focus on building responsive, modern web
             applications. I enjoy turning ideas into clean, user-friendly
@@ -56,7 +56,7 @@ export default function ContactModal({
         </div>
         <div>
           <p className="mb-10 text-[20px] xl:text-[24px] font-medium">My Technology Stack</p>
-          <ul className="flex items-center justify-center gap-5 flex-wrap mx-10 md:mx-20 sm:mx-0">
+          <ul className="flex items-center justify-center md:gap-5 flex-wrap mx-5 md:mx-20 sm:mx-0">
             <TechStack
               techName="React"
               techIcon="/assets/react_icon.png"
@@ -113,7 +113,7 @@ export default function ContactModal({
         </button>
         <h1 className="text-[28px] pt-5 md:pt-20">Let&apos;s Connect</h1>
         <form
-          className="flex flex-col gap-9 w-3/4 mt-10 md:mt-20"
+          className="flex flex-col gap-5 md:gap-9 w-3/4 max-w-2xl mt-3 md:mt-20"
           onSubmit={handleSubmit}
         >
           <input
