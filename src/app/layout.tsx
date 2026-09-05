@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ContactModalProvider } from "./context/ContactModalContext";
 import "./globals.css";
-import CursorFollower from "./components/CursorFollower";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +30,6 @@ export default function RootLayout({
     >
       <body className={`min-h-full flex flex-col ${geistSans.className}`}>
         <ContactModalProvider>
-          <CursorFollower />
           {children}
         </ContactModalProvider>
       </body>

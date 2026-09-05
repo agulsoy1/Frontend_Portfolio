@@ -7,6 +7,7 @@ import { useContactModal } from "./context/ContactModalContext";
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
 import Projects from "./components/Projects";
+import CursorFollower from "./components/CursorFollower";
 
 export default function Home() {
   const { openContactModal, isClosing, closeModal } = useContactModal();
@@ -27,6 +28,7 @@ export default function Home() {
         openContactModal ? "blur-sm" : ""
       }`}
     >
+      <CursorFollower darkMode={darkMode} />
       <BackToTop darkMode={darkMode} />
 
       {openContactModal && (
