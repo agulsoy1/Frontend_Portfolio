@@ -11,11 +11,16 @@ export default function Hero({ darkMode }: { darkMode: boolean }) {
         className={`order-2 flex flex-col items-center xl:items-start gap-4 md:p-5 py-2 rounded-lg`}
       >
         <div className="flex flex-col text-center xl:text-left sm:p-0 px-5 gap-4 z-100">
-          <h1 className="lg:text-[50px] text-[35px] font-light fade-in delay-250 transition-opacity">
-            Hi, I&apos;m <span className={`italic font-medium ${darkMode ? "text-[#d8c4ad]" : "text-[#1e293b]"}`}>Alexandre T. Gulsoy</span>
+          <h1 className="lg:text-[55px] text-[35px] font-light fade-in fade-in-delay-250 transition-opacity">
+            Hi, I&apos;m{" "}
+            <span
+              className={`italic font-medium ${darkMode ? "text-[#d8c4ad]" : "text-[#1e293b]"}`}
+            >
+              Alexandre T. Gulsoy
+            </span>
           </h1>
           <p
-            className={`lg:text-[22px] max-w-160 text-[16px] fade-in delay-500 transition-opacity shadow-[10px_10px_15px_rgba(0,0,0,0.15)] 
+            className={`lg:text-[23px] max-w-165 text-[16px] fade-in fade-in-delay-500 transition-opacity shadow-[10px_10px_15px_rgba(0,0,0,0.15)] 
             ${
               darkMode
                 ? "bg-[radial-gradient(circle_at_center,#1e293b_0%,#0f172a_35%,#020617_100%)]"
@@ -28,42 +33,42 @@ export default function Hero({ darkMode }: { darkMode: boolean }) {
           </p>
         </div>
         <div className="flex justify-center items-center gap-4 z-50 relative">
-          <Link
-            href="https://www.linkedin.com/in/alexandre-turgut-gulsoy-1063b62c"
-            className="hover:scale-200 bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce transition-transform delay-750"
-            target="_blank"
-          >
-            <Image
-              src="/assets/linkedin-in-brands-solid-full (1).svg"
-              alt="Contact"
-              width={20}
-              height={20}
-              className="invert"
-            />
-          </Link>
+            <Link
+              href="https://www.linkedin.com/in/alexandre-turgut-gulsoy-1063b62c"
+              className="hover:scale-125 bg-blue-500 text-white px-2 py-2 rounded-[50%] transition-transform fade-in fade-in-delay-750"
+              target="_blank"
+            >
+              <Image
+                src="/assets/linkedin-in-brands-solid-full (1).svg"
+                alt="Contact"
+                width={25}
+                height={25}
+                className="invert"
+              />
+            </Link>
           <Link
             href="https://github.com/agulsoy1"
-            className="hover:scale-200 bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce transition-transform delay-1000"
+            className="hover:scale-125 bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce transition-transform fade-in-delay-1000"
             target="_blank"
           >
             <Image
               src="/assets/github-brands-solid-full.svg"
               alt="Contact"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
               className="invert"
             />
           </Link>
           <a
-            href="/Alex_FES_Resume.pdf"
+            href="/Alex_Gulsoy_Resume.pdf"
             download
-            className="hover:scale-200 bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce transition-transform delay-1250"
+            className="hover:scale-125 bg-blue-500 text-white px-2 py-2 rounded-[50%] button-bounce transition-transform fade-in-delay-1250"
           >
             <Image
               src="/assets/file-pdf-regular-full.svg"
               alt="Contact"
-              width={20}
-              height={20}
+              width={25}
+              height={25}
               className="invert"
             />
           </a>
@@ -71,9 +76,9 @@ export default function Hero({ darkMode }: { darkMode: boolean }) {
       </div>
       <div className="order-1">
         <figure
-          className={`relative z-100 fade-in delay-0 min-w-60 min-h-75 
-                    w-[clamp(100px,25vw,400px)] 
-                    h-[clamp(150px,30vw,460px)] 
+          className={`relative z-100 fade-in fade-in-delay-0 min-w-60 min-h-75 
+                    w-[clamp(100px,25vw,450px)]
+                    h-[clamp(150px,30vw,550px)]
                     rounded-[50%] border-4 
                     ${darkMode ? "border-white" : "bg-linear-to-r from-black to-[#c0c0c0]"} overflow-hidden shadow-[-5px_5px_10px_rgba(0,0,0,0.25)]`}
         >

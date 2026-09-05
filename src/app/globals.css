@@ -25,6 +25,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 button {
   cursor: pointer;
 }
@@ -34,6 +38,21 @@ button {
 Animations 
 
 */
+
+@keyframes appear-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.group:hover appear-from-top {
+  animation: appear-from-top 1s ease-in-out backwards;
+}
 
 @keyframes fade-in {
   0% {
@@ -179,33 +198,33 @@ Animations
 }
 
 /* Delays */
-.delay-0 {
+.fade-in-delay-0 {
   animation-delay: 0ms;
 }
-.delay-250 {
+.fade-in-delay-250 {
   animation-delay: 250ms;
 }
-.delay-500 {
+.fade-in-delay-500 {
   animation-delay: 500ms;
 }
-.delay-750 {
+.fade-in-delay-750 {
   animation-delay: 750ms;
 }
-.delay-1000 {
+.fade-in-delay-1000 {
   animation-delay: 1000ms;
 }
-.delay-1250 {
+.fade-in-delay-1250 {
   animation-delay: 1250ms;
 }
-.delay-1500 {
+.fade-in-delay-1500 {
   animation-delay: 1500ms;
 }
-.delay-1750 {
+.fade-in-delay-1750 {
   animation-delay: 1750ms;
 }
-.delay-2000 {
+.fade-in-delay-2000 {
   animation-delay: 2000ms;
 }
-.delay-2250 {
+.fade-in-delay-2250 {
   animation-delay: 2250ms;
 }

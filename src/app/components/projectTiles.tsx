@@ -45,7 +45,7 @@ export default function ProjectTiles({
           className="md:block hidden w-full h-full object-cover"
         />
 
-        <div className={`${darkMode ? "bg-[#1e293b]" : "bg-[#524235]"} md:absolute md:inset-0 flex flex-col md:gap-4 gap-10 items-center justify-evenly p-5 md:opacity-0 md:group-hover:opacity-100 text-white hover:fade-in-right md:bg-black/90 transition duration-500 ease-in-out py-[clamp(10px,2vw,15px)]`}>
+        <div className={`${darkMode ? "bg-[#1e293b]" : "bg-[#524235]"} md:absolute md:inset-0 flex flex-col md:gap-4 gap-10 items-center justify-evenly p-5 md:opacity-0 md:group-hover:opacity-100 text-white hover:appear-from-top md:bg-black/90 transition duration-500 ease-in-out py-[clamp(10px,2vw,15px)]`}>
           <div className="flex flex-col gap-4 items-center text-center">
             <h2 className={`font-bold text-[clamp(20px,2vw,30px)]`}>{projectTitle}</h2>
             <h3 className="font-light text-[clamp(15px,2vw,20px)] md:mx-30 mx-5">
@@ -73,14 +73,14 @@ export default function ProjectTiles({
             <Link
               href={liveLink}
               target="_blank"
-              className="bg-blue-500 text-white px-2 py-2 rounded-[50px]"
+              className="bg-blue-500 hover:scale-110 duration-200 transition-transform text-white px-2 py-2 rounded-[50px]"
             >
               Live Demo
             </Link>
             <Link
               href={codeLink}
               target="_blank"
-              className="bg-blue-500 text-white px-2 py-2 rounded-[50px]"
+              className="bg-blue-500 hover:scale-110 duration-200 transition-transform text-white px-2 py-2 rounded-[50px]"
             >
               Github
             </Link>
