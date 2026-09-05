@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-export default function CursorFollower() {
+export default function CursorFollower({darkMode}: {darkMode: boolean}) {
   const [positions, setPositions] = useState(
     Array.from({ length: 10 }, () => ({ x: 0, y: 0 })),
   );
@@ -53,7 +53,7 @@ export default function CursorFollower() {
         return (
           <div
             key={index}
-            className="hidden pointer-fine:block fixed rounded-[10px] bg-white pointer-events-none z-200"
+            className={`hidden pointer-fine:block fixed rounded-[10px] ${darkMode ? 'bg-white' : 'bg-black'} pointer-events-none z-200`}
             style={{
               width: size,
               height: size,

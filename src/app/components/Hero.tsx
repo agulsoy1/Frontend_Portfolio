@@ -32,7 +32,7 @@ export default function Hero({ darkMode }: { darkMode: boolean }) {
             applications that create meaningful, user-centered experiences.
           </p>
         </div>
-        <div className="flex justify-center items-center gap-4 z-50 relative">
+        <div className="flex justify-center items-center gap-4 z-201 relative">
             <Link
               href="https://www.linkedin.com/in/alexandre-turgut-gulsoy-1063b62c"
               className="hover:scale-125 bg-blue-500 text-white px-2 py-2 rounded-[50%] transition-transform fade-in fade-in-delay-750"
