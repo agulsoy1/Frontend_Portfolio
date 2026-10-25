@@ -19,7 +19,7 @@ export default function Nav({
   const { openContactModal, setOpenContactModal, closeModal } =
     useContactModal();
   const navLinkHoverClass = `w-full hover:scale-120 hover:px-4 hover:py-2 hover:bg-white/20 rounded-[50px] duration-300`;
-  const navButtonHoverClass = `w-full hover:scale-120 hover:bg-white/20 rounded-[50px] duration-300`;
+  const navButtonHoverClass = `w-full hover:px-4 hover:py-1 hover:bg-white/20 rounded-[50px] duration-300`;
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
@@ -40,7 +40,7 @@ export default function Nav({
     <div className="w-full flex items-center justify-between">
       <div className="absolute left-5 top-5 flex items-center gap-1">
         <video
-          src="/assets/alexgulsoy.dev.logo.2-1.mp4"
+          src="/assets/logo_anim_wobg.mp4"
           width={100}
           height={100}
           autoPlay
