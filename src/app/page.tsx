@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import ContactModal from "./components/ContactModal";
 import Nav from "./components/Nav";
 import { useContactModal } from "./context/ContactModalContext";
-import About from "./components/About";
+import About from "./components/About/About";
 import BackToTop from "./components/BackToTop";
 import Projects from "./components/Projects";
-import CursorFollower from "./components/CursorFollower";
+// import CursorFollower from "./components/CursorFollower";
 
 export default function Home() {
   const { openContactModal, isClosing, closeModal } = useContactModal();
@@ -28,7 +28,7 @@ export default function Home() {
         openContactModal ? "blur-sm" : ""
       }`}
     >
-      <CursorFollower darkMode={darkMode} />
+      {/* <CursorFollower darkMode={darkMode} /> */}
       <BackToTop darkMode={darkMode} />
 
       {openContactModal && (
@@ -51,7 +51,7 @@ export default function Home() {
 
       <section
         id="about"
-        className={`w-full h-full scroll-mt-27 ${darkMode ? "text-white bg-linear-to-l from-[#0e162a] to-[#1c283c]" : "bg-linear-to-r from-[#826955] to-[#b8a592] text-black"}`}
+        className={`w-full h-full scroll-mt-27 py-50 ${darkMode ? "text-white bg-linear-to-l from-[#0e162a] to-[#1c283c]" : "bg-linear-to-r from-[#826955] to-[#b8a592] text-black"}`}
       >
         <About darkMode={darkMode} />
       </section>

@@ -33,11 +33,59 @@ button {
   cursor: pointer;
 }
 
+h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 30px;
+  font-weight: normal;
+}
+
+h3{
+  font-size: 20px;
+  font-weight: 300;
+}
+h4{
+  font-size: 16px;
+  font-weight: 300;
+}
+h5{
+  font-size: 14px;
+  font-weight: 300;
+}
+h6{
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/* section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+} */
+
 /* 
 
 Animations 
 
 */
+
+@keyframes slide-right-to-left {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+.slide-right-to-left {
+  animation: slide-right-to-left 1s ease-in-out both;
+}
 
 @keyframes appear-from-top {
   0% {

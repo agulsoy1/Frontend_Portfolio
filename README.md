@@ -39,3 +39,4 @@ Clone the repository:
 ```bash
 git clone https://github.com/agulsoy1/Frontend_Portfolio.git
 cd Frontend_Portfolio
+```
