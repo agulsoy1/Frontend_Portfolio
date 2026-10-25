@@ -10,6 +10,8 @@ type NavProps = {
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+console.log("Nav component loaded");
+
 export default function Nav({
   menuOpen,
   setMenuOpen,
